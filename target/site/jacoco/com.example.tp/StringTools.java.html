@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>StringTools.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TP JUnit + JaCoCo</a> &gt; <a href="index.source.html" class="el_package">com.example.tp</a> &gt; <span class="el_source">StringTools.java</span></div><h1>StringTools.java</h1><pre class="source lang-java linenums">package com.example.tp;
+
+<span class="fc" id="L3">public class StringTools {</span>
+
+    /**
+     * Retourne un extrait sûr entre [start, end) avec règles de bornes :
+     * - start &lt; 0 -&gt; 0
+     * - end &gt; length -&gt; length
+     * - start &gt;= end -&gt; &quot;&quot;
+     * - s == null -&gt; IllegalArgumentException
+     */
+    public String safeSlice(String s, int start, int end) {
+<span class="fc bfc" id="L13" title="All 2 branches covered.">        if (s == null) throw new IllegalArgumentException(&quot;null s&quot;);</span>
+<span class="fc" id="L14">        int n = s.length();</span>
+<span class="fc bfc" id="L15" title="All 2 branches covered.">        if (start &lt; 0) start = 0;</span>
+<span class="fc bfc" id="L16" title="All 2 branches covered.">        if (end &gt; n) end = n;</span>
+<span class="fc bfc" id="L17" title="All 2 branches covered.">        if (start &gt;= end) return &quot;&quot;;</span>
+<span class="fc" id="L18">        return s.substring(start, end);</span>
+    }
+
+    /** Retourne vrai si s est palindrome en ignorant la casse et les espaces. */
+    public boolean isLoosePalindrome(String s) {
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        if (s == null) return false;</span>
+<span class="fc" id="L24">        String norm = s.replaceAll(&quot;\\s+&quot;,&quot;&quot;).toLowerCase();</span>
+<span class="fc" id="L25">        int i = 0, j = norm.length() - 1;</span>
+<span class="fc bfc" id="L26" title="All 2 branches covered.">        while (i &lt; j) {</span>
+<span class="fc bfc" id="L27" title="All 2 branches covered.">            if (norm.charAt(i) != norm.charAt(j)) return false;</span>
+<span class="fc" id="L28">            i++; j--;</span>
+        }
+<span class="fc" id="L30">        return true;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

@@ -1,0 +1,7 @@
+organization=hammam
+projectKey=hammam_testsonar
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.76401
+dashboardUrl=https://sonarcloud.io/dashboard?id=hammam_testsonar
+ceTaskId=AZpi_-pp5Rl8PuF56C1y
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZpi_-pp5Rl8PuF56C1y
